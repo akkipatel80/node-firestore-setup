@@ -3,6 +3,7 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var bodyParser = require("body-parser");
+var port = process.env.PORT || 5454;
 
 var usersRouter = require("./routes/users");
 
@@ -17,8 +18,8 @@ app.use(bodyParser.json());
 
 app.use("/users", usersRouter);
 
-app.listen(5454, () => {
-  console.log("app running on:", 5454);
+app.listen(port, () => {
+  console.log("app running on:", port);
 });
 
 module.exports = app;
